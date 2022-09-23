@@ -1,0 +1,2 @@
+public class courseSchedule2 {
+}
