@@ -1,0 +1,806 @@
+DP
+Dynamic Programming (DP) covers a wide range of problem types and variations. One common type is problems that involve maximizing or minimizing values over subarrays, subsequences, or sets of choices. Here’s a breakdown of popular dynamic programming problem types and their typical variations, with examples to help understand them:
+
+
+1. Maximum Subarray/Contiguous Subarray Problems
+Problem Type: Find the maximum or minimum sum/product of contiguous subarrays.
+Examples:
+Maximum Subarray (Kadane’s Algorithm): Find the largest sum of contiguous subarray.
+LeetCode #53
+Maximum Product Subarray: Find the largest product of a contiguous subarray (the problem you mentioned).
+LeetCode #152
+Maximum Sum Circular Subarray: Find the maximum sum of a circular subarray.
+LeetCode #918
+These problems are often solved with a variation of Kadane's Algorithm or using rolling state DP.
+
+
+2. Subsequence Problems
+Problem Type: Find the longest, shortest, or maximum/minimum sum of subsequences (non-contiguous subarrays).
+Examples:
+Longest Increasing Subsequence (LIS): Find the longest increasing subsequence in an array.
+LeetCode #300
+Longest Common Subsequence (LCS): Find the longest common subsequence between two strings.
+LeetCode #1143
+Maximum Sum Increasing Subsequence: Find the maximum sum of an increasing subsequence in an array.
+Similar to LIS, but focuses on summing the values.
+Edit Distance: Find the minimum number of operations (insert, delete, replace) to transform one string into another.
+LeetCode #72
+Partition Equal Subset Sum: Check if the array can be partitioned into two subsets with equal sum.
+LeetCode #416
+3. Knapsack Problems
+Problem Type: Optimize the selection of items based on weight, capacity, or value constraints.
+Examples:
+0/1 Knapsack Problem: Choose items with given weights and values to maximize the value without exceeding capacity.
+LeetCode #416 (variation)
+Unbounded Knapsack: Similar to 0/1 knapsack, but allows picking unlimited quantities of an item.
+Subset Sum Problem: Determine if a subset of an array sums to a target value.
+LeetCode #494 (variation of knapsack)
+These problems involve making choices to optimize values, often using 2D DP tables or space optimization techniques.
+
+
+4. Coin Change Problems
+Problem Type: Determine the number of ways to make a certain amount using given coins, or find the minimum coins required.
+Examples:
+Coin Change: Find the fewest number of coins to make a certain amount.
+LeetCode #322
+Coin Change II: Find how many ways to make a certain amount using unlimited coins.
+LeetCode #518
+Minimum Path Sum: Find the minimum sum path in a grid from top-left to bottom-right.
+LeetCode #64
+5. Matrix/Grid Path Problems
+Problem Type: Finding optimal paths in a grid or matrix based on specific rules or constraints.
+Examples:
+Unique Paths: Find how many unique ways to travel from the top-left corner to the bottom-right corner of a grid.
+LeetCode #62
+Unique Paths II: Find how many unique ways to travel in a grid with obstacles.
+LeetCode #63
+Dungeon Game: Find the minimum initial health to reach the bottom-right corner of a dungeon matrix.
+LeetCode #174
+Cherry Pickup: Collect maximum cherries while traveling from the top-left to the bottom-right corner and back.
+LeetCode #741
+6. Partitioning Problems
+Problem Type: Break down arrays or strings into smaller subproblems with minimal costs or optimal values.
+Examples:
+Palindrome Partitioning: Partition a string into the minimum number of palindromic substrings.
+LeetCode #132
+Burst Balloons: Find the maximum coins you can collect by bursting balloons in a particular order.
+LeetCode #312
+Word Break: Check if a string can be segmented into a sequence of dictionary words.
+LeetCode #139
+7. Scheduling Problems
+Problem Type: Optimize scheduling of tasks/jobs under specific constraints (like deadlines, profits).
+Examples:
+Job Scheduling with Deadlines and Profits: Maximize profit by scheduling jobs before their deadlines.
+LeetCode #1235
+Meeting Rooms II: Find the minimum number of meeting rooms required to hold all meetings.
+LeetCode #253
+Course Schedule II: Determine the order in which courses should be taken based on prerequisites.
+LeetCode #210
+8. Cutting Problems
+Problem Type: Optimize the cuts on a given material to maximize or minimize values (like profits, lengths).
+Examples:
+Rod Cutting Problem: Given a rod of length n and prices for different lengths, find the optimal cuts to maximize profit.
+Minimum Cost to Cut a Stick: Find the minimum cost to cut a stick at specific positions.
+LeetCode #1547
+Matrix Chain Multiplication: Find the most efficient way to multiply a series of matrices.
+Common DP problem in textbooks.
+9. String Matching and Parsing Problems
+Problem Type: Match strings, find substrings, or perform operations like parsing and matching patterns.
+Examples:
+Regular Expression Matching: Check if a string matches a given regular expression pattern.
+LeetCode #10
+Wildcard Matching: Check if a string matches a given pattern with wildcards ? and *.
+LeetCode #44
+Longest Palindromic Substring: Find the longest palindromic substring in a string.
+LeetCode #5
+10. Game Theory Problems
+Problem Type: Determine if the player starting first can win a game with optimal strategies.
+Examples:
+Stone Game: Two players take turns removing stones from piles. Determine if the first player can win.
+LeetCode #877
+Predict the Winner: Determine if the first player can guarantee a win with optimal moves.
+LeetCode #486
+Nim Game: Players take turns removing 1 to 3 stones from a pile. Determine if the first player can win.
+LeetCode #292
+Greedy
+
+
+Greedy algorithms involve making a series of choices, each of which looks like the best option at the moment (locally optimal), with the hope that these choices will lead to a globally optimal solution. Unlike dynamic programming, greedy algorithms do not usually revisit or backtrack on decisions. Here’s a breakdown of typical Greedy Algorithm problem types, their variations, and some examples.
+
+
+1. Interval Scheduling Problems
+Problem Type: Select the maximum number of non-overlapping intervals or tasks based on start and end times.
+Examples:
+Activity Selection Problem: Given start and end times for activities, select the maximum number of non-overlapping activities.
+Approach: Sort activities by their finishing time and choose the ones that finish the earliest.
+LeetCode #435
+Meeting Rooms II: Find the minimum number of meeting rooms required for a given list of meeting times.
+LeetCode #253
+Maximum Number of Events That Can Be Attended: Given events with start and end days, find the maximum number of events that can be attended.
+LeetCode #1353
+2. Scheduling with Deadlines and Profits
+Problem Type: Maximize the total profit from a set of jobs/tasks with deadlines and profits.
+Examples:
+Job Scheduling with Deadlines: Maximize profit by scheduling jobs before their deadlines. Each job can only be done once and within its deadline.
+Approach: Sort jobs by profit, and schedule each job to the latest possible time slot.
+LeetCode #1235
+Job Sequencing Problem: Schedule jobs to maximize profit, respecting deadlines.
+Approach: Sort jobs by profit and assign them to the latest available slot before their deadline.
+3. Greedy for Minimizing Cost or Maximizing Efficiency
+Problem Type: Find the optimal way to minimize costs or maximize efficiency based on some criteria.
+Examples:
+Minimum Cost to Connect Sticks: Given sticks with different lengths, find the minimum cost of connecting all the sticks into one stick. The cost of connecting two sticks is the sum of their lengths.
+Approach: Use a Min-Heap to always combine the two smallest sticks.
+LeetCode #1167
+Gas Station Problem: You are at a series of gas stations arranged in a circle. Find out if you can complete a circular tour.
+LeetCode #134
+Minimize Cost to Hire Workers: Given quality and wage requirements of workers, find the minimum cost to hire workers such that the ratio of their wage to quality is fair.
+LeetCode #857
+4. Greedy for Partitioning Problems
+Problem Type: Partition an array or structure in a way that maximizes or minimizes a certain value.
+Examples:
+Partition Labels: Partition a string into as many parts as possible so that no letters appear in more than one part.
+Approach: Greedily choose the farthest possible right boundary for each segment.
+LeetCode #763
+Minimum Number of Arrows to Burst Balloons: Given a set of intervals representing balloons, find the minimum number of arrows required to burst all balloons.
+Approach: Sort balloons by their end points and greedily shoot arrows at the end of each balloon.
+LeetCode #452
+5. Graph Greedy Problems
+Problem Type: Solve problems on graphs by making locally optimal choices (e.g., shortest paths, minimum spanning trees).
+Examples:
+Dijkstra’s Algorithm: Find the shortest path from a source node to all other nodes in a weighted graph.
+Approach: Use a priority queue (Min-Heap) to always expand the node with the smallest known distance.
+LeetCode #743
+Prim’s Algorithm for Minimum Spanning Tree (MST): Find the minimum cost to connect all nodes in a graph.
+Approach: Use a greedy method to always expand the smallest edge to a new node.
+Kruskal’s Algorithm for Minimum Spanning Tree: Greedily add edges to the MST while avoiding cycles.
+LeetCode #1135
+6. Greedy for Array Problems
+Problem Type: Solve optimization problems on arrays by selecting the best local choice at each step.
+Examples:
+Candy Distribution: Each child is assigned a rating. You must give candies to children such that each child gets at least one candy, and children with higher ratings get more candies than their neighbors. Find the minimum candies needed.
+Approach: Traverse from left to right and right to left, making greedy decisions.
+LeetCode #135
+Jump Game: Given an array representing jump lengths, determine if you can reach the last index from the first index.
+Approach: Greedily track the farthest index you can jump to.
+LeetCode #55
+Jump Game II: Find the minimum number of jumps to reach the last index.
+Approach: Use a greedy approach to track the farthest reach and minimize jumps.
+LeetCode #45
+7. Greedy for Strings and Patterns
+Problem Type: Work with strings and character patterns to find optimal solutions.
+Examples:
+Remove K Digits: Given a string of digits, remove k digits such that the resulting number is the smallest possible.
+Approach: Use a greedy stack-based approach to maintain the smallest number possible.
+LeetCode #402
+Reorganize String: Rearrange characters in a string so that no two adjacent characters are the same.
+Approach: Use a greedy method with a priority queue (Max-Heap) to always pick the most frequent character first.
+LeetCode #767
+Partition String into Palindromes: Partition a string into the minimum number of palindromic substrings.
+Approach: Use greedy decisions to minimize cuts between palindromic segments.
+8. Greedy for Coin Change Problems
+Problem Type: Find the minimum number of coins to make up a target amount using given denominations.
+Examples:
+Coin Change (Greedy): Find the fewest number of coins to make up an amount using unlimited supply of given coin denominations.
+Approach: Greedily pick the largest denomination first.
+However, this greedy approach only works when denominations are standard (e.g., 1, 5, 10, 25). If the denominations are irregular, a dynamic programming approach may be necessary.
+LeetCode #322
+9. Greedy for Set Covering and Covering Problems
+Problem Type: Find the minimum number of items to cover all elements or maximize the number of covered elements.
+Examples:
+Set Cover Problem: Given a universe of elements and sets containing subsets of the universe, find the minimum number of sets that cover all elements.
+Approach: Greedily pick the set that covers the largest number of uncovered elements.
+Greedy Algorithm for Interval Covering: Find the minimum number of intervals needed to cover all points in a range.
+10. Greedy for Huffman Coding
+Problem Type: Create an optimal prefix-free encoding for symbols based on their frequencies.
+Examples:
+Huffman Coding: Given a set of symbols and their frequencies, create an optimal binary encoding for each symbol.
+Approach: Use a greedy approach to always combine the two least frequent symbols into a new symbol, building a binary tree.
+Common in data compression algorithms (not on LeetCode, but a well-known greedy problem).
+String and String Matching
+
+
+String and String Matching problems cover a wide range of algorithms, often used to search for patterns or manipulate string data. The problems and algorithms involved in these challenges can be classified into several categories based on techniques like brute force, hashing, sliding windows, dynamic programming, and advanced data structures (e.g., tries, suffix arrays). Below is a breakdown of common String and String Matching patterns, their variations, and examples.
+
+
+1. Basic String Search (Pattern Matching)
+Problem Type: Find a pattern in a text or determine if a pattern exists in a string.
+Examples:
+Naive String Matching: Check every substring of the text for a match with the pattern.
+Approach: Brute force by comparing the pattern with every substring.
+Complexity: (O(n \cdot m)), where (n) is the length of the text, and (m) is the pattern length.
+KMP Algorithm (Knuth-Morris-Pratt): Use partial match information (prefix-suffix array) to skip unnecessary comparisons.
+Approach: Build a prefix function to avoid redundant comparisons.
+Complexity: (O(n + m))
+LeetCode #28
+Rabin-Karp Algorithm: Use hashing to find the pattern in a text.
+Approach: Compute hash values for the pattern and substrings of the text.
+Complexity: Average case (O(n + m)), but (O(n \cdot m)) in the worst case.
+LeetCode #215
+2. Sliding Window
+Problem Type: Search or operate on substrings of a fixed or variable length.
+Examples:
+Longest Substring Without Repeating Characters: Find the length of the longest substring without repeating characters.
+Approach: Use a sliding window to expand and contract while tracking character positions.
+LeetCode #3
+Minimum Window Substring: Given a string and a set of characters, find the smallest substring that contains all characters.
+Approach: Use a sliding window to find valid substrings, and shrink the window as much as possible.
+LeetCode #76
+Longest Substring with At Most K Distinct Characters: Given a string, find the longest substring that contains at most k distinct characters.
+Approach: Sliding window with a hash map to count character occurrences.
+LeetCode #340
+3. Palindrome-Based Problems
+Problem Type: Work with palindromes (strings that read the same backward as forward).
+Examples:
+Longest Palindromic Substring: Find the longest palindromic substring in a given string.
+Approach: Use dynamic programming or expand around the center technique.
+LeetCode #5
+Palindromic Substrings: Count how many palindromic substrings are in a string.
+Approach: Use the expand-around-center method to count palindromes centered at each index.
+LeetCode #647
+Palindrome Partitioning: Partition a string such that every substring is a palindrome.
+Approach: Use backtracking to try every possible partition or DP to minimize cuts.
+LeetCode #131
+4. Anagrams and Substring Permutations
+Problem Type: Find anagrams of a string or permutations of a substring within another string.
+Examples:
+Group Anagrams: Group words that are anagrams of each other.
+Approach: Sort the letters of each word or use a character count hash map to identify anagrams.
+LeetCode #49
+Find All Anagrams in a String: Find all substrings of a string that are anagrams of a given pattern.
+Approach: Use a sliding window with a frequency map of characters.
+LeetCode #438
+Valid Anagram: Check if two strings are anagrams.
+Approach: Use sorting or frequency counting.
+LeetCode #242
+5. Longest Common Substring and Subsequence
+Problem Type: Find the longest substring or subsequence common to two strings.
+Examples:
+Longest Common Substring: Find the longest substring that appears in two given strings.
+Approach: Use dynamic programming with a 2D array to store common substring lengths.
+LeetCode #718
+Longest Common Subsequence (LCS): Find the longest subsequence that appears in two given strings.
+Approach: Use dynamic programming to find the LCS.
+LeetCode #1143
+Shortest Common Supersequence: Find the shortest string that contains both given strings as subsequences.
+LeetCode #1092
+6. String Compression and Decompression
+Problem Type: Compress a string or decompress a given compressed string.
+Examples:
+String Compression: Compress a string by replacing consecutive repeating characters with the character followed by the count.
+Approach: Use two pointers to compress the string in place.
+LeetCode #443
+Decode String: Decode a string encoded in the form k[encoded_string] where k is the number of times the encoded string is repeated.
+Approach: Use a stack to decode the nested structure.
+LeetCode #394
+7. Advanced String Matching (Trie, Suffix Trees)
+Problem Type: Efficiently search for patterns or substrings using advanced data structures.
+Examples:
+Trie (Prefix Tree): Implement a trie to insert, search, and delete words.
+Approach: Use a tree where each node represents a character, allowing efficient prefix search.
+LeetCode #208
+Longest Repeated Substring: Find the longest repeated substring in a string.
+Approach: Use a suffix array or suffix tree.
+LeetCode #1698
+Aho-Corasick Algorithm: Search for multiple patterns in a string using a combination of a Trie and KMP.
+8. Edit Distance (Dynamic Programming)
+Problem Type: Measure how different two strings are by counting the minimum number of operations (insertions, deletions, or substitutions) needed to transform one string into another.
+Examples:
+Edit Distance (Levenshtein Distance): Find the minimum number of operations to convert one string into another.
+Approach: Use dynamic programming to calculate the edit distance matrix.
+LeetCode #72
+One Edit Distance: Determine if two strings are exactly one edit away from each other.
+LeetCode #161
+Delete Operation for Two Strings: Find the minimum number of operations to make two strings identical by only deleting characters.
+LeetCode #583
+9. String Searching with Hashing
+Problem Type: Efficiently search for patterns using hashing techniques.
+Examples:
+Rabin-Karp Algorithm: Search for a pattern in a string using rolling hash.
+Approach: Use a rolling hash to compute hash values for substrings.
+LeetCode #215
+Substring Hashing: Find common substrings between two strings using a hash function to compare substrings.
+10. Special String Algorithms
+Problem Type: Solve specialized string problems using advanced techniques.
+Examples:
+Manacher's Algorithm: Find the longest palindromic substring in linear time.
+Suffix Automaton: Solve
+problems related to finding distinct substrings or the lexicographically smallest substring.
+
+
+Graph
+
+
+Graph problems are diverse and can be solved using a variety of techniques like depth-first search (DFS), breadth-first search (BFS), dynamic programming, greedy algorithms, and sometimes more advanced algorithms like Dijkstra's or Floyd-Warshall. Below is a breakdown of common Graph patterns, problem variations, and examples:
+
+
+1. DFS/BFS Traversal
+Problem Type: Explore or traverse the graph from a starting node using DFS or BFS. Often used to check connectivity or find paths.
+Examples:
+Number of Connected Components in an Undirected Graph: Find how many connected components exist in an undirected graph.
+Approach: Use DFS/BFS to visit each component and mark it.
+LeetCode #323
+Flood Fill: Fill connected regions in a grid (2D matrix) starting from a given cell.
+Approach: Use DFS/BFS to explore all neighboring cells of the same color and fill them.
+LeetCode #733
+Clone Graph: Clone an undirected graph (with cycles).
+Approach: Use DFS/BFS to visit all nodes and clone them while maintaining the structure.
+LeetCode #133
+2. Shortest Path Algorithms
+Problem Type: Find the shortest path in a graph (with or without weights).
+Examples:
+Dijkstra’s Algorithm: Find the shortest path from a source node to all other nodes in a weighted graph.
+Approach: Use a priority queue (min-heap) to explore nodes with the smallest distance first.
+LeetCode #743
+Bellman-Ford Algorithm: Find the shortest path in a graph with negative weights.
+Approach: Relax all edges repeatedly (useful for detecting negative cycles).
+LeetCode #787
+Floyd-Warshall Algorithm: Find shortest paths between all pairs of nodes.
+Approach: Use dynamic programming to update the shortest path between all pairs of vertices.
+3. Cycle Detection
+Problem Type: Detect if a cycle exists in a graph.
+Examples:
+Detect Cycle in a Directed Graph: Check if a cycle exists in a directed graph.
+Approach: Use DFS with a recursion stack to detect back edges.
+LeetCode #207
+Detect Cycle in an Undirected Graph: Check if a cycle exists in an undirected graph.
+Approach: Use DFS and mark visited nodes. Backtracking to a previously visited node indicates a cycle.
+LeetCode #261
+Union-Find Algorithm: Efficiently detect cycles in undirected graphs using Union-Find (Disjoint Set).
+LeetCode #684
+4. Topological Sorting
+Problem Type: Arrange the nodes of a directed acyclic graph (DAG) in a linear order where for every directed edge u → v, u comes before v.
+Examples:
+Course Schedule: Determine if all courses can be finished given dependencies between courses.
+Approach: Perform topological sorting using DFS or Kahn's algorithm (BFS).
+LeetCode #207
+Alien Dictionary: Given a list of words from a new language, determine the correct order of characters.
+Approach: Build a graph based on character precedence and perform topological sorting.
+LeetCode #269
+5. Minimum Spanning Tree (MST)
+Problem Type: Find the minimum set of edges that connect all nodes in a graph (with the smallest total weight).
+Examples:
+Kruskal’s Algorithm: Find the MST using a greedy approach by sorting edges by weight and using Union-Find to avoid cycles.
+Approach: Sort edges, and add them one by one while ensuring no cycles are formed.
+LeetCode #1135
+Prim’s Algorithm: Find the MST by growing the tree one node at a time, always choosing the smallest edge that connects to an unvisited node.
+Approach: Use a min-heap to always pick the smallest edge connecting the tree to a new node.
+LeetCode #1584
+6. Bipartite Graph
+Problem Type: Determine if a graph is bipartite (can be divided into two sets where no two nodes within the same set are adjacent).
+Examples:
+Is Graph Bipartite?: Check if a graph is bipartite.
+Approach: Use BFS or DFS to attempt to color the graph using two colors.
+LeetCode #785
+Possible Bipartition: Determine if it’s possible to divide nodes into two groups such that no nodes within the same group are connected.
+Approach: Use BFS/DFS to color the graph in two colors.
+LeetCode #886
+7. Union-Find (Disjoint Set)
+Problem Type: Efficiently manage connectivity queries in dynamic graphs.
+Examples:
+Redundant Connection: Given a tree with an extra edge, find the edge that can be removed to form a tree.
+Approach: Use Union-Find to detect the redundant edge.
+LeetCode #684
+Accounts Merge: Merge accounts based on email addresses shared between them.
+Approach: Use Union-Find to group accounts by connected components.
+LeetCode #721
+8. Grid Problems as Graphs
+Problem Type: Treat grid-based problems (e.g., in 2D or 3D grids) as graph traversal problems.
+Examples:
+Number of Islands: Count how many islands (connected regions of 1’s) exist in a 2D grid.
+Approach: Use DFS/BFS to explore each island.
+LeetCode #200
+Rotting Oranges: Simulate the process of rotten oranges spreading to fresh oranges in a grid.
+Approach: Use BFS to track the spreading of rot from each rotten orange.
+LeetCode #994
+Surrounded Regions: Capture all regions surrounded by X in a grid.
+Approach: Use DFS/BFS to mark boundary-connected regions that should not be flipped.
+LeetCode #130
+9. Maximum Flow (Network Flow)
+Problem Type: Maximize the flow in a network of nodes and edges (e.g., Ford-Fulkerson Algorithm).
+Examples:
+Maximal Network Flow: Find the maximum flow possible in a flow network.
+Approach: Use Ford-Fulkerson or Edmonds-Karp algorithms to calculate the max flow.
+Bipartite Matching: Match as many nodes as possible between two sets.
+Approach: Use network flow algorithms to solve the problem.
+10. Eulerian and Hamiltonian Paths
+Problem Type: Find paths that visit every edge exactly once (Eulerian) or every vertex exactly once (Hamiltonian).
+Examples:
+Eulerian Path: Determine if a graph contains an Eulerian path or circuit.
+Approach: Check degree conditions (0 or 2 odd vertices for Eulerian path).
+Hamiltonian Path: Find a path that visits every vertex exactly once.
+Approach: Backtracking or dynamic programming (held-Karp for TSP).
+11. 2-SAT Problem
+Problem Type: Solve boolean satisfiability problems for a specific case (each clause has two literals).
+Examples:
+2-SAT: Determine if a given set of 2-literal clauses is satisfiable.
+Approach: Represent the problem as an implication graph and check for strongly connected components (Kosaraju's or Tarjan’s algorithm).
+LeetCode #1129
+
+
+Tree
+
+
+Tree problems are a subset of graph problems with specific constraints—typically, they are connected, acyclic, and have n-1 edges for n nodes. Tree structures are widely used in many domains like binary search trees, AVL trees, heaps, segment trees, etc. Below are common Tree patterns, problem variations, and examples:
+
+
+1. Tree Traversal
+Problem Type: Perform depth-first (DFS) or breadth-first (BFS) traversal of a tree. Often involves visiting nodes in a specific order.
+
+
+Common Traversal Methods:
+
+
+In-order: Left → Root → Right
+Pre-order: Root → Left → Right
+Post-order: Left → Right → Root
+Level-order: Visit nodes level by level (BFS).
+Examples:
+
+
+Binary Tree Inorder Traversal: Return the in-order traversal of a binary tree.
+LeetCode #94
+Binary Tree Level Order Traversal: Return the level order traversal of a binary tree.
+LeetCode #102
+Binary Tree Preorder Traversal: Return the preorder traversal of a binary tree.
+LeetCode #144
+2. Binary Search Tree (BST) Operations
+Problem Type: Work with the properties of Binary Search Trees (BSTs), where left child nodes are smaller, and right child nodes are larger than the parent.
+Examples:
+Validate Binary Search Tree: Check if a binary tree is a valid BST.
+Approach: Use in-order traversal to ensure that node values increase monotonically.
+LeetCode #98
+Lowest Common Ancestor in BST: Find the lowest common ancestor (LCA) of two nodes in a BST.
+Approach: Traverse the tree and move left or right based on the node values.
+LeetCode #235
+Insert into a Binary Search Tree: Insert a value into the correct position in a BST.
+Approach: Recursively traverse the tree and insert the value in its proper place.
+LeetCode #701
+3. Tree Diameter / Longest Path
+Problem Type: Find the longest path between any two nodes in a tree. This path doesn't need to pass through the root.
+Examples:
+Diameter of Binary Tree: Find the longest path between any two nodes in a binary tree.
+Approach: Use DFS to calculate the height of each node and update the diameter as the sum of left and right subtree heights.
+LeetCode #543
+Longest Path in N-ary Tree: Find the longest path in an N-ary tree.
+Approach: Similar DFS approach, extended to multiple children.
+4. Lowest Common Ancestor (LCA)
+Problem Type: Given two nodes, find their lowest common ancestor (LCA) in the tree.
+Examples:
+LCA of a Binary Tree: Given two nodes, find their LCA in a binary tree (not necessarily a BST).
+Approach: Traverse the tree to find where both nodes split in the tree.
+LeetCode #236
+LCA of a Binary Search Tree: This is a more efficient version as the properties of the BST can be used to simplify the search.
+LeetCode #235
+5. Tree Diameter / Longest Path
+Problem Type: Find the longest path between any two nodes in a tree. This path doesn’t need to pass through the root.
+Examples:
+Diameter of Binary Tree: Find the longest path between any two nodes in a binary tree.
+Approach: Use DFS to calculate the height of each node and update the diameter as the sum of left and right subtree heights.
+LeetCode #543
+Longest Path in N-ary Tree: Find the longest path in an N-ary tree.
+Approach: Similar DFS approach, extended to multiple children.
+6. Subtree Problems
+Problem Type: Check if one tree is a subtree of another, or perform operations involving subtrees.
+Examples:
+Subtree of Another Tree: Check if one tree is a subtree of another.
+Approach: Recursively check if any node in the main tree matches the root of the subtree, and if their structures are identical.
+LeetCode #572
+Sum of Nodes in Subtree: Given a tree, find the sum of all nodes in a subtree rooted at a specific node.
+Approach: Use DFS to calculate the sum for each subtree.
+7. Tree Serialization and Deserialization
+Problem Type: Serialize a tree into a string and deserialize it back into a tree.
+Examples:
+Serialize and Deserialize Binary Tree: Convert a binary tree to a string representation, and then reconstruct the tree from the string.
+Approach: Use DFS (preorder or postorder) or BFS to serialize and deserialize the tree.
+LeetCode #297
+Serialize and Deserialize BST: Serialize and deserialize a BST, taking advantage of the BST properties to optimize the process.
+LeetCode #449
+8. Path Sum Problems
+Problem Type: Find paths in the tree whose node values sum to a given target.
+Examples:
+Path Sum: Given a target sum, check if the tree has a root-to-leaf path where the sum of node values equals the target.
+Approach: DFS to explore each root-to-leaf path and check the sum.
+LeetCode #112
+Path Sum II: Return all root-to-leaf paths where the sum equals the target.
+LeetCode #113
+Path Sum III: Count the number of paths that sum to a target value. The path doesn't need to start at the root or end at a leaf.
+Approach: Use DFS combined with a hashmap to track the cumulative sum.
+LeetCode #437
+9. Balanced Tree
+Problem Type: Determine if a tree is balanced (the heights of the two child subtrees of any node differ by no more than one).
+Examples:
+Balanced Binary Tree: Check if a binary tree is height-balanced.
+Approach: Use DFS to calculate the height of subtrees and check the balance condition.
+LeetCode #110
+Check Complete Binary Tree: Check if a binary tree is complete (all levels except possibly the last are filled).
+LeetCode #958
+10. Tree Construction
+Problem Type: Reconstruct a tree given specific traversal orders or partial information.
+Examples:
+Construct Binary Tree from Inorder and Preorder Traversal: Reconstruct the binary tree given its in-order and pre-order traversal arrays.
+Approach: Recursively build the tree by identifying the root and dividing the tree into left and right subtrees.
+LeetCode #105
+Construct Binary Search Tree from Preorder Traversal: Given preorder traversal, reconstruct the BST.
+LeetCode #1008
+11. Binary Indexed Tree / Segment Tree (Continued)
+Problem Type: Solve range query problems efficiently.
+Examples:
+Range Sum Query - Mutable: Implement a segment tree or binary indexed tree to handle range sum queries with updates.
+LeetCode #307
+Range Minimum Query: Use a segment tree to find the minimum value in a given range of the array.
+Approach: Build the segment tree to maintain the minimum value for each segment.
+LeetCode #308
+Kth Largest Element in a Stream: Use a heap (often implemented via a binary tree) to efficiently track the k-th largest element in a stream of numbers.
+LeetCode #703
+12. Tree Coloring Problems
+Problem Type: Problems where nodes need to be colored under specific constraints, often used in graph theory.
+Examples:
+Coloring a Tree: Assign colors to nodes in a tree such that no two adjacent nodes have the same color.
+Approach: Use DFS/BFS to traverse and assign colors.
+Two Colorability of a Graph: Check if a tree can be colored with two colors without adjacent nodes sharing the same color.
+LeetCode #785
+13. Transformations and Operations on Trees
+Problem Type: Problems that involve modifying or transforming a tree structure.
+Examples:
+Invert Binary Tree: Given a binary tree, invert it (swap left and right children).
+LeetCode #226
+Binary Tree to Doubly Linked List: Transform a binary tree into a doubly linked list in-place.
+Approach: Use in-order traversal to link nodes together.
+LeetCode #426
+14. Special Tree Structures
+Problem Type: Problems that utilize specific types of trees (e.g., AVL trees, Red-Black trees, etc.).
+Examples:
+Implement an AVL Tree: Implement an AVL tree with insertion, deletion, and balancing operations.
+Construct a Huffman Tree: Build a Huffman tree for encoding characters based on their frequencies.
+LeetCode #451 (indirectly related)
+Binary Search
+
+
+Binary search is a fundamental algorithm used for finding an element's position in a sorted array or list. It operates by repeatedly dividing the search interval in half, which makes it much more efficient than linear search methods. Below are common Binary Search patterns, problem variations, and examples:
+
+
+1. Basic Binary Search
+Problem Type: Given a sorted array, find the index of a target value.
+Example:
+Binary Search: Implement binary search to find a target in a sorted array.
+Approach: Start with the middle element. If it equals the target, return the index; if it's less, search the right half; if more, search the left half.
+LeetCode #704
+2. Finding the First/Last Occurrence
+Problem Type: Find the first or last position of a target value in a sorted array (handling duplicates).
+Examples:
+First Bad Version: Given a versioning system, find the first bad version in an array of versions.
+Approach: Use binary search to narrow down the first occurrence of a "bad" version.
+LeetCode #278
+Find First and Last Position of Element in Sorted Array: Return the indices of the first and last occurrences of a target value.
+Approach: Use modified binary search for both first and last positions.
+LeetCode #34
+3. Search Insert Position
+Problem Type: Given a sorted array and a target value, find the index at which the target can be inserted to maintain the order.
+Example:
+Search Insert Position: Determine the index of the target or where it would fit in the sorted order.
+Approach: Similar to binary search, return the index when the target is found or the position to insert it if not found.
+LeetCode #35
+4. Rotated Sorted Array
+Problem Type: Find a target value in a rotated sorted array.
+Example:
+Search in Rotated Sorted Array: Given a rotated sorted array, search for a target.
+Approach: Use binary search while checking which part of the array is sorted.
+LeetCode #33
+5. Finding Minimum in Rotated Sorted Array
+Problem Type: Find the minimum element in a rotated sorted array.
+Example:
+Find Minimum in Rotated Sorted Array: Determine the smallest element in a rotated sorted array.
+Approach: Apply binary search to find the pivot point where the rotation occurred.
+LeetCode #153
+6. Count of Element Occurrences
+Problem Type: Count occurrences of an element in a sorted array.
+Example:
+Count of Occurrences of an Element: Given a sorted array, count how many times a target appears.
+Approach: Use binary search to find the first and last positions, then calculate the count.
+LeetCode #34
+7. Square Root
+Problem Type: Find the integer square root of a non-negative integer.
+Example:
+Sqrt(x): Compute the square root of a non-negative integer using binary search.
+Approach: Use binary search to find the largest integer i such that i*i <= x.
+LeetCode #69
+8. Minimum or Maximum in a Continuous Range
+Problem Type: Find the minimum or maximum element in a sorted and rotated array.
+Example:
+Minimum in Rotated Sorted Array: Similar to the previous examples but focused on minimum values.
+LeetCode #153
+Maximum Average Subarray: Find the subarray with the maximum average using binary search for average.
+LeetCode #643
+9. Kth Smallest/Largest Element
+Problem Type: Find the k-th smallest or largest element in an array.
+Example:
+Kth Largest Element in an Array: Find the k-th largest element in an unsorted array.
+Approach: Use a variation of binary search combined with a heap or quickselect.
+LeetCode #215
+10. Aggressive Cows Problem
+Problem Type: Distributing elements under certain conditions, such as placing cows in stalls to maximize the minimum distance between them.
+Example:
+Aggressive Cows: Given positions of stalls, place cows such that the minimum distance between any two cows is maximized.
+Approach: Use binary search on the answer (the minimum distance) to find the maximum distance.
+LeetCode #891
+Siliding Window
+
+
+The Sliding Window technique is a powerful algorithmic pattern commonly used to solve problems that involve arrays or lists, particularly when the goal is to find a subset of contiguous elements that satisfy certain conditions. This approach allows for a more efficient solution compared to using nested loops, as it reduces the time complexity significantly by avoiding repetitive calculations.
+
+
+Common Patterns and Problem Variations
+1. Maximum/Minimum Sum Subarray of Size K
+Problem Type: Find the maximum or minimum sum of any contiguous subarray of size k.
+Examples:
+Maximum Sum Subarray of Size K: Given an array, find the maximum sum of a contiguous subarray of size k.
+Approach: Use a sliding window of size k to compute the sum and keep track of the maximum.
+LeetCode #642
+Minimum Sum Subarray of Size K: Similarly, find the minimum sum for a contiguous subarray of size k.
+Approach: Use the same sliding window technique with minimum tracking.
+2. Longest Substring with At Most K Distinct Characters
+Problem Type: Find the length of the longest substring that contains at most k distinct characters.
+Example:
+Longest Substring with K Distinct Characters: Given a string, find the length of the longest substring that contains at most k distinct characters.
+Approach: Use a hashmap to track character counts and a sliding window to adjust the left end when more than k distinct characters are found.
+LeetCode #340
+3. Longest Substring Without Repeating Characters
+Problem Type: Find the length of the longest substring without repeating characters.
+Example:
+Longest Substring Without Repeating Characters: Given a string, find the length of the longest substring that contains all unique characters.
+Approach: Use a sliding window and a set to track characters. Move the right pointer to expand the window and adjust the left pointer when duplicates are encountered.
+LeetCode #3
+4. Minimum Window Substring
+Problem Type: Find the smallest substring that contains all characters of a given string.
+Example:
+Minimum Window Substring: Given two strings s and t, find the minimum window in s that contains all characters of t.
+Approach: Use a sliding window combined with a hashmap to track character frequencies and adjust the window size accordingly.
+LeetCode #76
+5. Counting Occurrences of Anagrams
+Problem Type: Count the number of substrings in a string that are anagrams of another string.
+Example:
+Find All Anagrams in a String: Given a string and a pattern, find all start indices of the pattern's anagrams in the string.
+Approach: Use a sliding window to check for anagram character counts.
+LeetCode #438
+6. Subarray Product Less Than K
+Problem Type: Find the number of contiguous subarrays where the product of all elements is less than k.
+Example:
+Subarray Product Less Than K: Given an array and a number k, count the number of contiguous subarrays where the product is less than k.
+Approach: Use a sliding window approach to expand the right pointer and adjust the left pointer when the product exceeds k.
+LeetCode #713
+7. Longest Repeating Character Replacement
+Problem Type: Given a string, find the length of the longest substring that can be obtained by replacing no more than k characters.
+Example:
+Longest Repeating Character Replacement: Given a string and an integer k, return the length of the longest substring that can be formed by replacing at most k characters.
+Approach: Use a sliding window to track the frequency of characters and adjust the window size based on the number of replacements needed.
+LeetCode #424
+8. Find All Numbers Disappeared in an Array
+Problem Type: Identify the numbers that are missing from a given range.
+Example:
+Find All Numbers Disappeared in an Array: Given an array containing n numbers where numbers can be between 1 and n, find all the numbers that are missing.
+Approach: Use a sliding window approach to mark numbers as found and track the missing numbers.
+LeetCode #448
+Sorting
+
+
+Sorting is a fundamental concept in computer science and is often a prerequisite for solving various problems efficiently. Understanding sorting algorithms and their variations can significantly improve your problem-solving skills. Below, I outline common sorting-related patterns, variations, and problems you might encounter.
+
+
+Common Sorting Patterns and Problem Variations
+1. Basic Sorting Algorithms
+Problem Type: Implementing various sorting algorithms and understanding their complexities.
+Examples:
+Bubble Sort: Simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.
+Insertion Sort: Builds a sorted array one element at a time, inserting elements in their correct position.
+Selection Sort: Divides the input list into a sorted and an unsorted region and repeatedly selects the smallest element from the unsorted region.
+Merge Sort: A divide-and-conquer algorithm that divides the array into halves, sorts them, and merges the sorted halves.
+Quick Sort: Selects a "pivot" element and partitions the array into elements less than and greater than the pivot, then recursively sorts the partitions.
+Heap Sort: Uses a binary heap to sort the elements, converting the array into a heap and then extracting the largest element repeatedly.
+2. Sorting with Conditions
+Problem Type: Sorting based on specific criteria or multiple criteria.
+Examples:
+Sort an Array by Parity: Rearrange an array such that all even numbers appear before all odd numbers.
+Approach: Use a stable sorting algorithm or a custom comparator.
+LeetCode #905
+Sort Colors: Given an array consisting of red, white, and blue (represented by integers 0, 1, and 2), sort the array in a single pass.
+Approach: Use a three-pointer approach (Dutch National Flag problem).
+LeetCode #75
+Custom Sorting: Sort objects based on a custom property (e.g., sort by age, then name).
+Approach: Use a custom comparator function.
+3. Kth Largest/Smallest Element
+Problem Type: Finding the k-th largest or smallest element in an array.
+Examples:
+Kth Largest Element in an Array: Find the k-th largest element in an unsorted array.
+Approach: Use Quick Select or a min-heap of size k.
+LeetCode #215
+Kth Smallest Element in a Sorted Matrix: Find the k-th smallest element in a sorted 2D matrix.
+Approach: Use binary search or a min-heap.
+LeetCode #378
+4. Merge Intervals
+Problem Type: Merging overlapping intervals based on sorting.
+Example:
+Merge Intervals: Given a collection of intervals, merge all overlapping intervals.
+Approach: Sort the intervals by the start time and then merge them in one pass.
+LeetCode #56
+5. Find Duplicate Numbers
+Problem Type: Detecting duplicates in an array.
+Example:
+Find All Duplicates in an Array: Given an array of integers, return an array containing all the integers that appear twice.
+Approach: Sort the array first and then check for duplicates in one pass.
+LeetCode #442
+6. Top K Frequent Elements
+Problem Type: Finding the most frequent elements in an array.
+Example:
+Top K Frequent Elements: Given a non-empty array of integers, return the k most frequent elements.
+Approach: Use a hashmap to count occurrences, then sort the counts, or use a min-heap to maintain the top k elements.
+LeetCode #347
+7. Sorting with Count Frequencies
+Problem Type: Counting and sorting elements based on their frequencies.
+Example:
+Sort Array By Frequency: Sort the elements of an array based on their frequency in descending order; if two elements have the same frequency, sort them in ascending order.
+Approach: Use a hashmap to count frequencies, then sort based on the count and value.
+LeetCode #451
+8. Bucket Sort
+Problem Type: Sorting when the input is uniformly distributed.
+Example:
+Sort an Array: Use bucket sort to sort an array of floating-point numbers in the range [0, 1).
+Approach: Create buckets, distribute the elements into the buckets, and sort each bucket.
+LeetCode #164 (related to bucket sort for gaps)
+Prefix Sum Suffix Sum
+
+
+Range Sum Queries
+• Problem Type: Compute the sum of elements in a specific range efficiently.
+• Example:
+○ Range Sum Query - Immutable: Given an array and multiple queries, return the sum of elements between indices i and j for each query.
+§ Approach: Precompute the prefix sums, where prefix[i] stores the sum of the array elements from index 0 to i. The sum from i to j can then be computed as prefix[j] - prefix[i-1].
+§ LeetCode #303
+
+
+Prefix Sum with Updates
+• Problem Type: Handle range queries with the possibility of updates to the original array.
+• Example:
+○ Range Sum Query - Mutable: Support sum queries and updates on an array.
+§ Approach: Use a Segment Tree or Binary Indexed Tree (Fenwick Tree) to maintain prefix sums while allowing updates.
+§ LeetCode #307
+
+
+Subarray Sum Equals K
+• Problem Type: Find the number of contiguous subarrays whose sum equals a given value k.
+• Example:
+○ Subarray Sum Equals K: Given an array and an integer k, find the total number of continuous subarrays whose sum equals k.
+§ Approach: Use a hashmap to store the counts of prefix sums. For each prefix sum encountered, check how many times the sum current_sum - k has occurred before.
+§ LeetCode #560
+
+
+Maximum Size Subarray Sum Equals k
+• Problem Type: Find the length of the longest contiguous subarray whose sum equals a given value k.
+• Example:
+○ Maximum Size Subarray Sum Equals K: Given an array and an integer k, find the maximum length of a subarray that sums to k.
+§ Approach: Similar to the previous problem, but keep track of the maximum length instead of just counting the occurrences.
+§ LeetCode #325
+
+
+Count of Subarrays with Sum Divisible by K
+• Problem Type: Count the number of subarrays whose sum is divisible by a given integer k.
+• Example:
+○ Count of Subarrays with Sum Divisible by K: Given an array and an integer k, return the number of subarrays whose sum is divisible by k.
+§ Approach: Use a hashmap to count occurrences of prefix sums modulo k.
+§ LeetCode #974
+
+
+Find the Minimum Size Subarray Sum
+• Problem Type: Find the minimal length of a contiguous subarray of which the sum is greater than or equal to a given target.
+• Example:
+○ Minimum Size Subarray Sum: Given an array and a target value, find the minimal length of a contiguous subarray of which the sum is greater than or equal to the target.
+§ Approach: Use a sliding window in combination with prefix sums to find the minimal length.
+§ LeetCode #209
+
+
+Product of Array Except Self
+• Problem Type: Calculate the product of an array except self without using division.
+• Example:
+○ Product of Array Except Self: Given an array, return an array such that output[i] is equal to the product of all the numbers in the input array except nums[i].
+§ Approach: Use two prefix product arrays, one from the left and one from the right, to compute the result.
+§ LeetCode #238
