@@ -1,18 +1,12 @@
-package java;//import org.apache.commons.codec.digest.DigestUtils;
+package java.leetcode;//import org.apache.commons.codec.digest.DigestUtils;
 
-import java.BestTimeToBuyAndSell;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 class main {
 
     static DFTreeNode currentDir, rootDirectory;
     static final String defaultPermissions = "rwxrwxrwx";
-
-
-
 
     //public static void main(String[] args) {
 //       // System.out.println("Hello World!"); // Display the string.
@@ -68,7 +62,7 @@ class main {
 //        new Thread(new NumbersProducer(queue, poisonPill, poisonPillPerProducer + mod)).start();
 
     private static final String EMAIL_PATTERN = "((^(?!\\.))(?!.*\\.@)(?!.*?\\.\\.)(?![@:;()<>\\\\\\\",\\[\\]\\s])(?:[a-zA-Z0-9!#$%&+\\-*/=?^_`.'{|}~]*)|(((^\\\"[^@:\\\"]{1,}\\\"@*))+)|(^(?!\\.))(?!.*\\.@)(?!.*?\\.\\.)(^([-\\w\\/\\.]|(\\\\[\\\\\\]\\s]|[!#$%&+\\-*/=?^_`.'{|}~]*))+))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
-    private static Pattern pattern = Pattern.compile(EMAIL_PATTERN, Pattern.CASE_INSENSITIVE);
+//    private static Pattern pattern = Pattern.compile(EMAIL_PATTERN, Pattern.CASE_INSENSITIVE);
     public static void main(String args[] ) throws Exception {
 
 //        try {
