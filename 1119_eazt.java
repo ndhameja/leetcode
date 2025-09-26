@@ -18,14 +18,14 @@ S consists of lowercase English letters only.
 1 <= S.length <= 1000
 */
 
-var removeVowels = function(S) {
-    var x = [];
-    var set = new Set(['a','e','i','o','u']);
-    
-    for (var i = 0 ;i < S.length;i++){
-        if (!set.has(S[i])){
-            x.push(S[i]);
-        }      
-    } 
-    return x.join('');
-};
+//var removeVowels = function(S) {
+//    var x = [];
+//    var set = new Set(['a','e','i','o','u']);
+//
+//    for (var i = 0 ;i < S.length;i++){
+//        if (!set.has(S[i])){
+//            x.push(S[i]);
+//        }
+//    }
+//    return x.join('');
+//};

@@ -9,7 +9,11 @@ Example 2:
 Input: [[7,10],[2,4]]
 Output: 1*/
 
-class Solution {
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+class MeetingRoomsII_253 {
     public int minMeetingRooms(int[][] intervals) {
         
     // Check for the base case. If there are no intervals, return 0

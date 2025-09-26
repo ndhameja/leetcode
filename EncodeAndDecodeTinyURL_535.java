@@ -1,4 +1,7 @@
-public class Codec {
+import java.util.HashMap;
+import java.util.Map;
+
+public class EncodeAndDecodeTinyURL_535 {
     Map<Integer, String> map = new HashMap<>();
     int i = 0;
 

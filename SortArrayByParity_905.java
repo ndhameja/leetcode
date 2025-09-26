@@ -20,7 +20,7 @@ Note:
 
 */
 
-class Solution {
+class SortArrayByParity_905 {
     public int[] sortArrayByParity(int[] A) {
         int oddIndex = 0;
         for(int i = 0; i < A.length ; i++){

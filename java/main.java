@@ -1,5 +1,6 @@
-import org.apache.commons.codec.digest.DigestUtils;
+package java;//import org.apache.commons.codec.digest.DigestUtils;
 
+import java.BestTimeToBuyAndSell;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -70,42 +71,46 @@ class main {
     private static Pattern pattern = Pattern.compile(EMAIL_PATTERN, Pattern.CASE_INSENSITIVE);
     public static void main(String args[] ) throws Exception {
 
-        try {
-            RoadRegister roadRegister= new RoadRegister();
-            roadRegister.exec();
+//        try {
+//            RoadRegister roadRegister= new RoadRegister();
+//            roadRegister.exec();
+//
+//            String aa=DigestUtils.sha256Hex("{\"correlationId\":\"2de30118-8b9e-4536-bd7b-bd5a10b2e3f2\"}");
+//
+//             //String EMAIL_PATTERN = "((^(?!\\.))(?!.*\\.@)(?!.*?\\.\\.)(?![@:;()<>\\\\\\\",\\[\\]\\s])(?:[a-zA-Z0-9!#$%&+\\-*/=?^_`.'{|}~]*)|(((^\\\"[^@:\\\"]{1,}\\\"@*))+)|(^(?!\\.))(?!.*\\.@)(?!.*?\\.\\.)(^([-\\w\\/\\.]|(\\\\[\\\\\\]\\s]|[!#$%&+\\-*/=?^_`.'{|}~]*))+))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+//
+//boolean abc= validateEmail("aaaaaaa");
+//
+//            validateEmail("b@mm.com");
+//
+//            rootDirectory = new DFTreeNode("/root", true, false, "rwxrwxrwx", null);
+//            currentDir = rootDirectory;
+//            parseInput();
+//        } catch (Exception e) {
+//            //System.out.println(e);
+//            e.printStackTrace();
+//            throw e;
+//        }
 
-            String aa=DigestUtils.sha256Hex("{\"correlationId\":\"2de30118-8b9e-4536-bd7b-bd5a10b2e3f2\"}");
-
-             //String EMAIL_PATTERN = "((^(?!\\.))(?!.*\\.@)(?!.*?\\.\\.)(?![@:;()<>\\\\\\\",\\[\\]\\s])(?:[a-zA-Z0-9!#$%&+\\-*/=?^_`.'{|}~]*)|(((^\\\"[^@:\\\"]{1,}\\\"@*))+)|(^(?!\\.))(?!.*\\.@)(?!.*?\\.\\.)(^([-\\w\\/\\.]|(\\\\[\\\\\\]\\s]|[!#$%&+\\-*/=?^_`.'{|}~]*))+))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
-
-boolean abc= validateEmail("aaaaaaa");
-
-            validateEmail("b@mm.com");
-
-            rootDirectory = new DFTreeNode("/root", true, false, "rwxrwxrwx", null);
-            currentDir = rootDirectory;
-            parseInput();
-        } catch (Exception e) {
-            //System.out.println(e);
-            e.printStackTrace();
-            throw e;
-        }
+        BestTimeToBuyAndSell bt = new BestTimeToBuyAndSell();
+        int tt=bt.maxProfit(new int[]{10,1,5,6,7,1});
+        System.out.println(tt);
     }
 
-    public static boolean validateEmail(String emailAddress) {
-        if (!org.springframework.util.StringUtils.isEmpty(emailAddress)) {
-            Matcher matcher = pattern.matcher(emailAddress);
-            if(matcher.matches()) {
-                int index = emailAddress.lastIndexOf("@");
-                if(emailAddress.substring(0, index).length() >= 1 && emailAddress.substring(0, index).length() <= 64 && emailAddress.substring(index + 1).length() <= 255 ) {
-                    return matcher.matches();
-                }
-            }
-        } else {
-            return false;
-        }
-        return false;
-    }
+//    public static boolean validateEmail(String emailAddress) {
+//        if (!org.springframework.util.StringUtils.isEmpty(emailAddress)) {
+//            Matcher matcher = pattern.matcher(emailAddress);
+//            if(matcher.matches()) {
+//                int index = emailAddress.lastIndexOf("@");
+//                if(emailAddress.substring(0, index).length() >= 1 && emailAddress.substring(0, index).length() <= 64 && emailAddress.substring(index + 1).length() <= 255 ) {
+//                    return matcher.matches();
+//                }
+//            }
+//        } else {
+//            return false;
+//        }
+//        return false;
+//    }
 
     private static void parseInput() {
 
